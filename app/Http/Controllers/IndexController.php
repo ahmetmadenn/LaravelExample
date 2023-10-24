@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ButtonRequest;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
@@ -17,15 +18,9 @@ class IndexController extends Controller
     }
 
 
-    public function postBook(Request $request){
-        $validateData = $request->validate(
-            [
-                'name'=>'required|string',
-                'book_code'=>'required|integer',
-                'author'=>'required|string',
+    public function postBook(ButtonRequest $request){
 
-            ]
-        );
+
         //kayit işlemleri
         $book = new Book();
         $book->name = $request->name;
@@ -47,17 +42,14 @@ class IndexController extends Controller
     return view('index', array('books'=>$books, 'bookCount'=>$bookCount,'firstBook'=>$book));
    }
 
-   public function postBookEdit(Request  $request){
-    $validateData = $request->validate(
-        [
-            'name'=>'required|string',
-            'book_code'=>'required|integer',
-            'author'=>'required|string',
-            'book_id'=>'required|integer',
+   public function postBookEdit(ButtonRequest  $request){
 
-        ]
-    );
-    //günceleme işlemleri
+
+
+
+        //günceleme işlemleri
+
+
     $book= Book::find($request->book_id);
     $book->name = $request->name;
     $book->book_code = $request->book_code;

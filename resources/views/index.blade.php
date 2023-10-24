@@ -16,6 +16,7 @@
          />
       <!-- MDB -->
       <link rel="stylesheet" href="{{ asset('css/mdb.min.css') }}" />
+
       <title>Document</title>
    </head>
    <body>
@@ -69,6 +70,12 @@
                   <span style="margin-right: 10px;"></span>
                   <a href="{{ route('index') }}" class="btn btn-info">İPTAL ET</a>
                </form>
+               <br> <div>
+                @foreach ($errors->all() as $error)
+                   <li>{{ $error }}</li>
+
+                @endforeach
+                  </div></br>
             </div>
          </div>
          <div>
