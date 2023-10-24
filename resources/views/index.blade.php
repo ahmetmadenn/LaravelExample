@@ -60,10 +60,12 @@
                   <div class="form-outline mb-4">
                      <input type="text" id="book_code" name="book_code"  value="{{ isset($firstBook) ? $firstBook->book_code : "" }}" class="form-control" />
                      <label class="form-label" for="book_code">Kitap Kodu</label>
+
                   </div>
                   <div class="form-outline mb-4">
                      <input type="text" id="author" name="author"  value="{{ isset($firstBook) ? $firstBook->author : "" }}" class="form-control" />
                      <label class="form-label" for="author">Yazar</label>
+
                   </div>
                   {!! isset($firstBook) ? '<input type="hidden" name="book_id" value=" ' .$firstBook->id. ' ">' : ''!!}
                   <input type="submit" name="kaydet"  value="{{ isset($firstBook) ? 'GÜncelle' : 'Kaydet'}}" class="btn btn-info">

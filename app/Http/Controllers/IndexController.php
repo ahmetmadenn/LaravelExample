@@ -42,20 +42,19 @@ class IndexController extends Controller
     return view('index', array('books'=>$books, 'bookCount'=>$bookCount,'firstBook'=>$book));
    }
 
-   public function postBookEdit(ButtonRequest  $request){
+   public function postBookEdit(ButtonRequest  $request)
+   {
 
-
-
-
-        //günceleme işlemleri
-
-
+//günceleme işlemleri
     $book= Book::find($request->book_id);
     $book->name = $request->name;
     $book->book_code = $request->book_code;
     $book->author = $request->author;
     $book->save();
     return redirect()->route('index');
+
+
+
 
 }
 }

@@ -22,9 +22,9 @@ class ButtonRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=> ['required'],
-            'book_code'=> ['required'],
-            'author'=> ['required'],
+            'name'=> ['required' ,'string',''],
+            'book_code'=> ['required' ,'string',''],
+            'author'=> ['required ' ,'string',''],
 
 
     ];
