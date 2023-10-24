@@ -47,7 +47,7 @@ class IndexController extends Controller
     return view('index', array('books'=>$books, 'bookCount'=>$bookCount,'firstBook'=>$book));
    }
 
-   public function postBookEdit(Request $request){
+   public function postBookEdit(Request  $request){
     $validateData = $request->validate(
         [
             'name'=>'required|string',
